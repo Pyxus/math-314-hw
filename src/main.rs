@@ -1,12 +1,13 @@
+#![allow(dead_code)]
+#![allow(unused_variables)]
+#![allow(unused_imports)]
 use std::vec;
 
 const ASCII_A: u8 = 'A' as u8;
 const ALPHABET_SIZE: u8 = 26;
 
 fn main() {
-    //println!("{}", alphabet_index_to_string(vec![13, 20, 12, 1, 4, 17, 19, 7, 4, 14, 17, 24]));
-    //let v = string_to_alphabet_index(String::from("ljlljltjunjuuj"));
-    let msg = String::from("BON");
+    let msg = String::from("TXAENF");
     let msg_indicies = string_to_alphabet_index(&msg);
     let e_indicies = encrypt_affine((4, 13), &msg);
     let e_msg = alphabet_index_to_string(&e_indicies);
@@ -46,6 +47,7 @@ fn gcd(mut a: u8, mut b: u8) -> u8 {
     a
 }
 
+
 fn mod_inv(a: u8, n: u8) -> u8 {
     if gcd(a, n) == 1 {
 
@@ -65,6 +67,9 @@ fn encrypt_affine(key: (u32, u32), msg: &String) -> Vec<u8> {
     encrypted_msg
 }
 
+fn encrypt_playfair(key: &String, msg: &String){
+    
+}
 /*
 fn decrypt_affine(key: (u32, u32), msg: String) -> String{
     let mut decrypted_msg = String::new();
