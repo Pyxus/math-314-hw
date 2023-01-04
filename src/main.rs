@@ -1,35 +1,31 @@
+#![allow(dead_code)]
+#![allow(unused_variables)]
+#![allow(unused_imports)]
 use std::{vec, collections::HashMap, cmp::{self, min}};
 
 const ASCII_A: u8 = 'A' as u8;
 const ALPHABET_SIZE: u8 = 26;
 
 fn main() {
-    //println!("{}", alphabet_index_to_string(vec![13, 20, 12, 1, 4, 17, 19, 7, 4, 14, 17, 24]));
-    //let v = string_to_alphabet_index(String::from("ljlljltjunjuuj"));
-    let msg = String::from("lcyfqpngcytnkvveakkynktfswdyrnaeerqqoccmhspfshaekrziuvleiwpyyazinwaevydfizcydf
-    idzejvloairlooddcdsrxceokycalrechhztfpntiwatjkfpmvjqlgvrseodrrtcrcjjaeuqpnujge
-    brtizncpyqrzvlolprgcpcrlpijrqdudvbeoyrtptyvazrivaekvpazmgrpptyvkpsjrepfifkehvg
-    jlnvngehkycnoiicntcpcycipneeudcdsrxctfkycjmrkastyvnwaevgdfizcydcpgqnfkgeskycpn
-    vdwsonvtprkycpnvdwnaejcydrcycgvesxbvimqcyfqpndvqdaxvqeofeczfpfscpcrlpsrebwofby
-    etyvppslcrtnxtgahvirpxkjgqtyzqllcfudtyvkeouvbfcvkfpkvprsevecxytrlpqlznehvzpalr
-    ecdsfkfpytrlxajhsprruclswigpnucw");
-    let count_dict = char_dist(&msg);
-    println!("{count_dict:?}");
-    println!("{}", match_count(&String::from("lcyfqpngcytnkvveakkynktfswdyrnaeerqqoccmhspfshaekrziuvleiwpyyazinwaevydfizcydf
-    idzejvloairlooddcdsrxceokycalrechhztfpntiwatjkfpmvjqlgvrseodrrtcrcjjaeuqpnujge
-    brtizncpyqrzvlolprgcpcrlpijrqdudvbeoyrtptyvazrivaekvpazmgrpptyvkpsjrepfifkehvg
-    jlnvngehkycnoiicntcpcycipneeudcdsrxctfkycjmrkastyvnwaevgdfizcydcpgqnfkgeskycpn
-    vdwsonvtprkycpnvdwnaejcydrcycgvesxbvimqcyfqpndvqdaxvqeofeczfpfscpcrlpsrebwofby
-    etyvppslcrtnxtgahvirpxkjgqtyzqllcfudtyvkeouvbfcvkfpkvprsevecxytrlpqlznehvzpalr
-    ecdsfkfpytrlxajhsprruclswigpnucw"), &String::from(" lcyfqpngcytnkvveakkynktfswdyrnaeerqqoccmhspfshaekrziuvleiwpyyazinwaevydfizcydf
-    idzejvloairlooddcdsrxceokycalrechhztfpntiwatjkfpmvjqlgvrseodrrtcrcjjaeuqpnujge
-    brtizncpyqrzvlolprgcpcrlpijrqdudvbeoyrtptyvazrivaekvpazmgrpptyvkpsjrepfifkehvg
-    jlnvngehkycnoiicntcpcycipneeudcdsrxctfkycjmrkastyvnwaevgdfizcydcpgqnfkgeskycpn
-    vdwsonvtprkycpnvdwnaejcydrcycgvesxbvimqcyfqpndvqdaxvqeofeczfpfscpcrlpsrebwofby
-    etyvppslcrtnxtgahvirpxkjgqtyzqllcfudtyvkeouvbfcvkfpkvprsevecxytrlpqlznehvzpalr
-    ecdsfkfpytrlxajhsprruclswigpnucw")));
+    let s = "abc";
+    println!("{:?}", s.as_bytes())
 }
 
+fn str_to_alcode(string: &str) -> Vec<u8>{
+    let mut alphabet_code = vec![0 as u8; string.len()];
+    for (i, x) in string.to_uppercase().as_bytes().iter().enumerate(){
+        alphabet_code[i] = x - ASCII_A;
+    }
+    alphabet_code
+}
+
+fn char2alcode(c: &char){}
+
+fn alcode2str(){}
+
+fn alcode2char(){}
+
+fn _gcd(){}
 
 fn string_to_alphabet_index(text: &String) -> Vec<u8> {
     let mut index_array: Vec<u8>= Vec::new();
